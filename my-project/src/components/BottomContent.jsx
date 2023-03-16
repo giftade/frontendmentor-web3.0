@@ -4,7 +4,7 @@ import topLaptops from "../../../assets/images/image-top-laptops.jpg";
 
 export const BottomContent = () => {
   return (
-      <section className="flex flex-col justify-between my-5 mx-2 md:flex-row">
+      <section className="flex flex-col justify-between my-5 mx-2 md:flex-row md:ml-12">
         <div className="flex space-x-5 sm:mb-10">
           <div className="">
             <img className="md:mt-5" src={retroPc} />
