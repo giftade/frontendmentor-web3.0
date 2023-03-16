@@ -1,9 +1,6 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import "./App.css";
-import logo from "../../assets/images/logo.svg";
-import hamburger from "../../assets/images/icon-menu.svg";
-import closeBtn from "../../assets/images/icon-menu-close.svg";
+import { MobileMenu } from "./components/MobileMenu";
+import { Header } from "./components/Header";
 import desktopPhoto from "../../assets/images/image-web-3-desktop.jpg";
 import mobilePhoto from "../../assets/images/image-web-3-mobile.jpg";
 import retroPc from "../../assets/images/image-retro-pcs.jpg";
@@ -13,65 +10,9 @@ import topLaptops from "../../assets/images/image-top-laptops.jpg";
 function App() {
   return (
     <div>
-      {/* Mobile Navbar */}
-      <div class="hidden">
-        <div
-          id="menu"
-          className="flex flex-col bg-offWhite right-0 top-0 h-screen w-3/5 fixed py-5 pr-2text-left z-10"
-        >
-          <div className="flex justify-end">
-            <img className="mr-10 -mt-1 mb-15" src={closeBtn} />
-          </div>
-          <a className="pt-5 pl-6" href="#">
-            Home
-          </a>
-          <a className="pt-5 pl-6" href="#">
-            New
-          </a>
-          <a className="pt-5 pl-6" href="#">
-            Popular
-          </a>
-          <a className="pt-5 pl-6" href="#">
-            Trending
-          </a>
-          <a className="pt-5 pl-6" href="#">
-            Categories
-          </a>
-        </div>
-      </div>
+      <MobileMenu/>
       <div id="body">
-        <header className="px-10 w-full fixed bg-offWhite">
-          <div
-            id="nav"
-            className="flex items-center mx-1
-           justify-between mt-1 mb-1 md:mx-10"
-          >
-            <div className="pt-2 -ml-10">
-              <img src={logo} />
-            </div>
-            <div
-              id="items"
-              className="hidden md:flex space-x-6 mx-5 text-darkGrayishBlue"
-            >
-              <a href="#" className="hover:text-softRed">
-                Home
-              </a>
-              <a href="#" className="hover:text-softRed">
-                New
-              </a>
-              <a href="#" className="hover:text-softRed">
-                Popular
-              </a>
-              <a href="#" className="hover:text-softRed">
-                Trending
-              </a>
-              <a href="#" className="hover:text-softRed">
-                Categories
-              </a>
-            </div>
-            <img id="menu-btn" className="block   md:hidden" src={hamburger} />
-          </div>
-        </header>
+        <Header/>
         <main className="flex flex-col mx-2 md:mx-3 md:flex-row md:justify-evenly pt-16">
           <div className="md:w-2/3">
             <img className="hidden  md:block md:" src={desktopPhoto} />
