@@ -19,7 +19,7 @@ export const LeftMain = () => {
               really fulfilling its promise?
             </p>
             <div className="my-8 md:mb-1">
-              <button class="bg-softRed text-offWhite px-10 py-3 font-medium baseline hover:bg-veryDarkBlue">
+              <button className="bg-softRed text-offWhite px-10 py-3 font-medium baseline hover:bg-veryDarkBlue">
                 READ MORE
               </button>
             </div>

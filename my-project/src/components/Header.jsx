@@ -1,7 +1,10 @@
 import logo from "../../../assets/images/logo.svg";
 import hamburger from "../../../assets/images/icon-menu.svg";
+import closeBtn from "../../../assets/images/icon-menu-close.svg";
+import { useState } from "react";
 
 export const Header = () => {
+  const [open, setOpen] = useState(false);
   return (
     <div>
       <header className="px-10 w-full fixed bg-offWhite">
@@ -33,9 +36,51 @@ export const Header = () => {
               Categories
             </a>
           </div>
-          <img id="menu-btn" className="block   md:hidden" src={hamburger} />
+          <img
+            id="menu-btn"
+            className="block md:hidden"
+            onClick={() => setOpen(!open)}
+            src={open ? closeBtn : hamburger}
+          />
         </div>
       </header>
+      {/* mobile menu */}
+      <div className="md:hidden">
+        <div
+          id="menu"
+          className={`flex flex-col bg-offWhite right-0 
+          transition-all duration-50 ease-in
+          ${
+            open ? "top-14" : "hidden"
+          } h-screen w-2/3 fixed py-5 pr-2text-left z-10  `}
+        >
+          <a className="pt-5 pl-6" href="#">
+            Home
+          </a>
+          <a className="pt-5 pl-6" href="#">
+            New
+          </a>
+          <a className="pt-5 pl-6" href="#">
+            Popular
+          </a>
+          <a className="pt-5 pl-6" href="#">
+            Trending
+          </a>
+          <a className="pt-5 pl-6" href="#">
+            Categories
+          </a>
+        </div>
+
+        <div
+          id="menu"
+          onClick={() => setOpen(!open)}
+          className={`flex flex-col  bg-veryDarkBlue left-0 
+          transition-all duration-50 ease-in
+          ${
+            open ? "top-0 opacity-70" : "hidden"
+          } h-screen w-1/3 fixed py-5 pr-2text-left z-10  `}
+        ></div>
+      </div>
     </div>
   );
 };
